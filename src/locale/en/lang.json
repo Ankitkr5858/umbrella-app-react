@@ -1,0 +1,8 @@
+{
+    "header": "Custom Umbrella",
+    "header2": "Customize your umbrella",
+    "uploadPhoto": "Upload a logo for an instant preview.",
+    "allowedFiles": ".png and .jpg files only. Max file size is 5MB.",
+    "uploadLogo": "UPLOAD LOGO",
+    "invalidFile": "* Invalid file size or type"
+}

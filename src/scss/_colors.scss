@@ -1,0 +1,49 @@
+
+$blueColor: #2fb3e5;
+$pinkColor: #ce0771;
+$yellowColor: #edc23c;
+
+.blue-bg {
+    background: $blueColor;
+}
+
+.pink-bg {
+    background: $pinkColor;
+}
+
+.yellow-bg {
+    background: $yellowColor;
+}
+
+.blue-color {
+    color: $blueColor;
+    svg & {
+        fill: currentColor;
+    }
+}
+
+.pink-color {
+    color: $pinkColor;
+    svg & {
+        fill: currentColor;
+    }
+}
+
+.yellow-color {
+    color: $yellowColor;
+    svg & {
+        fill: currentColor;
+    }
+}
+
+.blue-bg-lighten {
+    background: lighten($blueColor, 30%);
+}
+
+.pink-bg-lighten {
+    background: lighten($pinkColor, 30%);
+}
+
+.yellow-bg-lighten {
+    background: lighten($yellowColor, 30%);
+}

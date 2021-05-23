@@ -1,0 +1,20 @@
+.loader {
+    width: 32px;
+    height: 32px;
+    fill: white;
+
+    &-big {
+        width: 120px;
+        height: 120px;
+        fill: currentColor;
+    }
+
+    &.visible {
+        animation: spin 1.5s ease-in-out infinite, showEffect 0.5s linear;
+    }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

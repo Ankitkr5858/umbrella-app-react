@@ -1,0 +1,50 @@
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+    + label {
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 420px;
+        cursor: pointer;
+        padding: 10px 15px;
+
+        span {
+            margin: 0 auto;
+        }
+
+        svg:not(.loader) {
+            fill: currentColor;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &:hover + label,
+    &:focus + label {
+        outline: 2px dotted blue;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .input-file {
+        + label {
+            margin-bottom: 40px;
+
+            &.has-error {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+@import "./normalize";
+@import "./bootstrap-grid";
+@import "./fileInput";
+@import "./loader";
+@import "./colors";
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/Roboto-Light.ttf") format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("../assets/fonts/Roboto-Bold.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+// @media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+// @media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+// @media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+// @media (max-width: 1199.98px) { ... }
+
+@keyframes showEffect {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes hideEffect {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.not-visible{
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    animation: hideEffect 0.5s linear;
+}
+
+.visible {
+    visibility: visible;
+    animation: showEffect 0.5s linear;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+html, body {
+    font-family: "Roboto", "Arial";
+}
+
+.umbrella-app {
+    display: flex;
+    min-height: 100vh;
+
+    .image-wrapper {
+        position: relative;
+        text-align: center;
+    }
+
+    
+    img {
+        max-width: 65%;
+    }
+
+    .logo {
+        position: absolute;
+        right: 50%;
+        bottom: 25px;
+        transform: translate(50%, 0);
+        max-width: 12.5%;
+    }
+    
+    .color-picker {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        &__wrapper {
+            display: flex;
+            margin: 30px 0;
+        }
+    }
+    .umbrella-title {
+        font-family: "Roboto Bold", "Arial";
+        font-size: 54px;
+        margin-bottom: 35px;
+    }
+
+    .umbrella-customize {
+        font-family: "Roboto Bold", "Arial";
+        font-size: 18px;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .upload-logo-text {
+        margin: 0;
+    }
+
+    .allowed-files {
+        margin: 15px 0;
+        margin-bottom: 10px;
+        color: lighten(#000, 25%);
+        font-size: 12px;
+    }
+
+    .file-type-error {
+        margin: 0;
+        color: red;
+
+        &.error {
+            &-show {
+                display: block;
+                margin-bottom: 20px;
+            }
+            &-hide {
+                display: none;
+            }
+        }
+    }
+
+    .remove-icon {
+        filter: invert(1);
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+
+    .w-100 {
+        width: initial;
+    }
+
+    .umbrella-app {
+        .logo {
+            right: 50%;
+        }
+    
+        .image-container, .content-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-container, .image-wrapper {
+            align-items: center;
+        }
+
+        .image-wrapper > img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .umbrella-title {
+            text-align: center;
+            margin-bottom: -15px;
+        }
+
+        .image-wrapper {
+            margin-top: 20px;        
+        }
+    }
+}
